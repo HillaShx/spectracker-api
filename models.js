@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 const sequelize = require('./dbConnector');
 const fs = require('fs');
-const colorObjs = fs.readFileSync('/media/hillash/Media/dev/DATA_SPECTRACKER/colors/Color_objs.json');
-const skillTypeObjs = fs.readFileSync('/media/hillash/Media/dev/DATA_SPECTRACKER/skillTypes/skillTypeObjs.json');
+const colorObjs = fs.readFileSync('data/ColorObjs.json');
+const skillTypeObjs = fs.readFileSync('data/skillTypeObjs.json');
 
 
 const User = sequelize.define('user', {
