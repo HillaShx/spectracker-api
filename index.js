@@ -9,10 +9,10 @@ app.use(logger);
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/users', require('./routes/api/users')); // users
-app.use('/api/patients', require('./routes/api/patients')); // patients
-app.use('/api/goals', require('./routes/api/goals')); // goals
-app.use('/api/sessions', require('./routes/api/sessions')); // sessions
+app.use('/users', require('./routes/users')); // users
+app.use('/patients', require('./routes/patients')); // patients
+app.use('/goals', require('./routes/goals')); // goals
+app.use('/sessions', require('./routes/sessions')); // sessions
 
 const PORT = process.env.PORT || 5000;
 
