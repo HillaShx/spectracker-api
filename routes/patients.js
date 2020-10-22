@@ -57,6 +57,21 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Get all skills by patient
+router.get('/:id/skills', async (req, res) => {
+  try {
+    const patient = await Patient.findByPk(req.params.id);
+    if (patient) {
+      const skills = await patient.getSkills();
+      res.json(skills)
+    } else {
+      res.status(400).json({msg: `Unable to find patient with ID ${req.params.id}`})
+    }
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 // Get all goals by patient
 router.get('/:id/goals', async (req, res) => {
   try {
